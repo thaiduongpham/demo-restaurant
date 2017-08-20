@@ -1,0 +1,17 @@
+@import '../assets/styles/core/main';
+
+.pd-menu {
+  margin: 20px 0;
+
+  .pd-font-title {
+    margin-bottom: 15px;
+    + p {
+      font-size: $font-l;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__list_item {
+    margin-bottom: 30px;
+  }
+}

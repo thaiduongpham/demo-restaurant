@@ -1,0 +1,25 @@
+<div class="pd-home">
+  <div class="pd-home__top">
+    <img src="http://www.davidchuschinabistro.com/images/jumbotron_768.jpg" alt="top image" class="img-responsive">
+  </div>
+  <div class="row text-center pd-home__list">
+    <div class="col-md-4 col-lg-4 pd-home__list_item left">
+      <div class="pd-border-highlight" (click)="onOpenMenu()">
+        <img src="http://www.davidchuschinabistro.com/images/menu-tile.jpg" alt="Menu title">
+        <span class="text">Menu</span>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-4 pd-home__list_item middle">
+      <div class="pd-border-highlight" (click)="onOpenSpecials()">
+        <img src="http://www.davidchuschinabistro.com/images/specials-tile.jpg" alt="Specials title">
+        <span class="text">Specials</span>
+      </div>
+    </div>
+    <div class="col-md-4 col-lg-4 pd-home__list_item right">
+      <div class="pd-border-highlight">
+        <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+        <span class="text">Map</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+@import '../assets/styles/core/main';
+
+nav {
+  background: $red;
+  color: $white;
+  height: 170px;
+  padding: 20px 0;
+  margin: 0;
+  
+  .pd-header {
+    &__logo {
+      width: 130px;
+    }
+    &__text {
+      font-size: $font-xxl;
+      font-weight: $font-weight-bold;
+      margin-left: 10px;
+      position: relative;
+      top: -30px;
+      text-shadow: 2px 3px 2px $gray;
+    }
+  }
+
+  a {
+    color: $white;
+    cursor: pointer;
+    font-size: $font-l;
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+      color: $yellow;
+    }
+  }
+}
+
+.navbar-right {
+  text-align: center;
+  li {
+    a {
+      margin: 0 5px;
+    }
+    &.active {
+      a {
+        background-color: transparent;
+        color: $yellow;
+        border: 1px solid;
+      }
+    }
+  }
+
+  .fa {
+    display: block;
+    margin-bottom: 6px;
+    font-size: $font-xl;
+  }
+
+  .tel {
+    font-size: $font-xl;
+    padding-right: 0;
+    + span {
+      display: block;
+    }
+  }
+}
+

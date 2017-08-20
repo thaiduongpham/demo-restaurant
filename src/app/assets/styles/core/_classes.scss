@@ -1,0 +1,30 @@
+.pd-border-highlight {
+  border: 2px solid $gray;
+  cursor: pointer;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .text {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: block;
+    padding: 10px;
+    font-size: $font-l;
+    color: $white;
+    text-transform: uppercase;
+    background:rgba($black, .6);
+  }
+  transition: all .1s linear;
+  &:hover {
+    transition: all .2s linear; 
+    box-shadow: 0 1px 5px 1px $blue;
+    transform: scale(1.1);
+  }
+}
+
+.pd-font-title {
+  font-size: $font-xxxl;
+  font-weight: $font-weight-bold;
+}

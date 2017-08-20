@@ -1,0 +1,12 @@
+<div class="row text-center pd-menu-detail">
+  
+   <div 
+    *ngIf="menuService.submenuChanged | async"
+    class="pd-menu-detail">
+    <h1>{{ menuService.submenuChanged.get[0] }}</h1>
+    <p>{{ menuService.submenuChanged.get[1] }}</p>
+  </div> 
+
+  
+
+</div>

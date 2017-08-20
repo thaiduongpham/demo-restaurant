@@ -1,0 +1,31 @@
+@import '../assets/styles/core/main';
+
+footer {
+  background: $dark-gray;
+  color: $white;
+  padding: 15px 0;
+  font-size: $font-m;
+}
+.pd-footer {
+  &__info {
+    padding-bottom: 20px; 
+  }
+
+  .note {
+    font-size: $font-s;
+    color: $green;
+  }
+
+  blockquote {
+    border-left: none;
+    text-indent: -12px;
+    margin-bottom: 5px;
+  }
+
+  &__copyright {
+    border-top: 1px solid;
+    padding-top: 7px;
+    font-size: $font-s;
+  }
+
+}

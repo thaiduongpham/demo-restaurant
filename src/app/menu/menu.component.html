@@ -1,0 +1,15 @@
+<div class="row text-center pd-menu">
+
+  <h1 class="pd-font-title">Menu Categories</h1>
+  <p>Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.</p>
+  
+  <div class="pd-menu__list">
+    <div
+      class="col-md-3 col-lg-3 pd-menu__list_item"
+      *ngFor="let submenu of submenuList">
+      <app-submenu 
+        [submenu]="submenu">
+      </app-submenu>
+    </div>
+  </div>
+</div>
