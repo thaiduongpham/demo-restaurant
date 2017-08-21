@@ -28,3 +28,15 @@
   font-size: $font-xxxl;
   font-weight: $font-weight-bold;
 }
+
+.pd-back-btn {
+  float: left;
+  cursor: pointer;
+  font-size: $font-l;
+  color: $green;
+  &:before {
+    content: "\F0A5";
+    font-family: FontAwesome;
+    margin-right: 5px;
+  }
+}

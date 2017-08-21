@@ -1,12 +1,35 @@
 <div class="row text-center pd-menu-detail">
-  
-   <div 
+  <span
+    class="pd-back-btn"
+    (click)="onBack()">back</span>
+   <!-- <div 
     *ngIf="menuService.submenuChanged | async"
     class="pd-menu-detail">
-    <h1>{{ menuService.submenuChanged.get[0] }}</h1>
-    <p>{{ menuService.submenuChanged.get[1] }}</p>
-  </div> 
-
-  
+    <h1>{{ 'menuService.submenuChanged.get[0]'' }}</h1>
+    <p>{{ "menuService.submenuChanged.get[1]'"" }}</p>
+  </div> -->
+  <h1>Lunch menu</h1>
+  <p>endlich wieder ein wenig action. Die Nachichten waren seit langen ziemlich langweilig﻿</p>
+  <div
+    *ngIf="submenuDetailList"
+    class="row pd-menu-detail__list">
+    <div
+      *ngFor="let detail of submenuDetailList"
+      class="col-md-6 col-lg-6 pd-menu-detail__list_item">
+        <div class="col-md-6 col-lg-6 text-right left">
+          <div class="pd-menu-detail__list_item_image-code">
+            <img [src]="detail.imageUrl" [alt]="detail.name">
+            <span class="code">{{ detail.code }}</span>
+          </div>
+          <div class="pd-menu-detail__list_item_price">
+            {{ detail.price | currency:'USD':true }}
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 text-left right">
+          <h3>{{ detail.name }}</h3>
+          <p>{{ detail.description }}</p>
+        </div>
+    </div>
+  </div>
 
 </div>
