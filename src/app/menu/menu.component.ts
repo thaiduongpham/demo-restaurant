@@ -16,9 +16,9 @@ export class MenuComponent implements OnInit {
 
   async ngOnInit() {
     this.loading = true;
-    await this.backendService.getCategories().then((categories) => {
-      this.categories = categories;
-    });
+    await this.backendService.getCategories()
+      .then(categories => this.categories = categories);
+
     this.loading = false;
   }
 

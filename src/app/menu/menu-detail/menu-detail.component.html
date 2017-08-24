@@ -3,8 +3,9 @@
     class="pd-back-btn"
     (click)="onBack()">back</span>
 
-  <h1>Lunch menu</h1>
-  <p>endlich wieder ein wenig action. Die Nachichten waren seit langen ziemlich langweilig﻿</p>
+  <h1>{{ cName }}</h1>
+  <p>{{ cDescription }}</p>
+
   <div
     *ngIf="menuDetailList"
     class="row pd-menu-detail__list">
@@ -14,10 +15,13 @@
         <div class="col-md-6 col-lg-6 text-right left">
           <div class="pd-menu-detail__list_item_image-code">
             <img [src]="detail.imageUrl" [alt]="detail.name">
-            <span class="code">{{ detail.code }}</span>
+            <span class="code">{{ detail.shortName }}</span>
           </div>
           <div class="pd-menu-detail__list_item_price">
-            {{ detail.price | currency:'USD':true }}
+            {{ detail.priceSmall | currency:'USD':true }}
+            <span class="portion">{{ detail.smallPortionName }}</span>
+            {{ detail.priceLarge | currency:'USD':true }}
+            <span class="portion">{{ detail.largePortionName }}</span>
           </div>
         </div>
         <div class="col-md-6 col-lg-6 text-left right">

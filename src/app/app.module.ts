@@ -15,7 +15,6 @@ import { AwardsComponent } from './awards/awards.component';
 import { CategoryComponent } from './menu/category/category.component';
 import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { MenuService } from './menu/menu.service';
 import { BackendService } from './shared/backend.service';
 
 @NgModule({
@@ -39,7 +38,7 @@ import { BackendService } from './shared/backend.service';
       apiKey: 'AIzaSyCx-U5GoHpNAWT_pei4g4mj9z_2wDAHPSc'
     })
   ],
-  providers: [MenuService, BackendService],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,36 +5,35 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
 
 import { Category } from './../menu/category/category.model';
+import { MenuDetail } from './../menu/menu-detail/menu-detail.model';
 
 @Injectable()
 export class BackendService {
 
-  baseURL = 'https://duong-restaurant-server.herokuapp.com/';
+  static BASE_URL = 'https://duong-restaurant-server.herokuapp.com/';
 
   constructor(private http: Http) { }
 
-  getMenuItem() {
-    return this.http.get(`${this.baseURL}/menu-items.json`)
-      .map((response: Response) => {
-        const data = response.json();
-        return data;
+  getCategories(): Promise<Category[]> {
+    return this.http.get(`${BackendService.BASE_URL}/categories.json`)
+      .toPromise()
+      .then((response: Response) => response.json())
+      .then(categories => {
+        return categories
+                .map(category =>
+                 Category.fromJSON(category));
       })
       .catch((error: Response) => {
+        console.log('error: ', error);
         return Observable.throw('Ooopp... Something went wrong');
       });
   }
 
-  getCategories() {
-    return this.http.get(`${this.baseURL}/categories.json`)
+  getCategoryContent(shortName: string): Promise<any> {
+    return this.http.get(`${BackendService.BASE_URL}menu_items.json?category=${shortName}`)
       .toPromise()
-      .then((response: Response) => response.json())
-      .then(categories => {
-        const list = categories.map((category) =>
-          new Category(category.name,
-            `${this.baseURL}/images/menu/${category.short_name}/${category.short_name}.jpg`,
-            category.short_name,
-            category.special_instructions));
-        return list;
+      .then((response: Response) => {
+        return response.json();   
       })
       .catch((error: Response) => {
         console.log('error: ', error);

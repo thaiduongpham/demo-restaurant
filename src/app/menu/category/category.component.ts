@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MenuService } from '../menu.service';
-
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
@@ -13,14 +11,13 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private menuService: MenuService) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit() { }
 
   onNavigate(slug: string) {
     // this.menuService.categoryChanged.next([this.category.name, this.category.description]);
-    // this.router.navigate([slug], { relativeTo: this.route });
+    this.router.navigate([slug], { relativeTo: this.route });
   }
 
 }

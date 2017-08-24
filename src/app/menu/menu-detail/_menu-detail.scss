@@ -22,6 +22,9 @@
         font-size: $font-l;
         font-weight: $font-weight-bold;
         margin-top: 5px;
+        .portion {
+          font-size: $font-xs;
+        }
       }
       img {
         width: 100%;
