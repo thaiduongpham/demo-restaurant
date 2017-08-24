@@ -1,6 +1,6 @@
-import { Submenu } from './submenu/submenu.model';
+import { Category } from './category/category.model';
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from './menu.service';
+import { BackendService } from '../shared/backend.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,11 +9,17 @@ import { MenuService } from './menu.service';
 })
 export class MenuComponent implements OnInit {
 
-  submenuList: Array<Submenu>;
-  constructor(private menuService: MenuService) { }
+  categories: Array<Category>;
+  loading: boolean;
 
-  ngOnInit() {
-    this.submenuList = this.menuService.getSubmenuList();
+  constructor(private backendService: BackendService) { }
+
+  async ngOnInit() {
+    this.loading = true;
+    await this.backendService.getCategories().then((categories) => {
+      this.categories = categories;
+    });
+    this.loading = false;
   }
 
 }

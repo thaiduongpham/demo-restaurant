@@ -4,12 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuService } from '../menu.service';
 
 @Component({
-  selector: 'app-submenu',
-  templateUrl: './submenu.component.html',
-  styleUrls: ['./_submenu.scss']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./_category.scss']
 })
-export class SubmenuComponent implements OnInit {
-  @Input() submenu;
+export class CategoryComponent implements OnInit {
+  @Input() category;
 
   constructor(
     private router: Router,
@@ -19,8 +19,8 @@ export class SubmenuComponent implements OnInit {
   ngOnInit() { }
 
   onNavigate(slug: string) {
-    this.menuService.submenuChanged.next([this.submenu.name, this.submenu.description]);
-    this.router.navigate([slug], { relativeTo: this.route });
+    // this.menuService.categoryChanged.next([this.category.name, this.category.description]);
+    // this.router.navigate([slug], { relativeTo: this.route });
   }
 
 }
