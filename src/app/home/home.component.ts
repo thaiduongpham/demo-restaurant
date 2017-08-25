@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  lat: number = 52.5250871;
-  lng: number = 13.367208;
+  lat = 52.5250871;
+  lng = 13.367208;
 
   constructor(
     private router: Router,
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   onOpenSpecials() {
-    this.router.navigate(['specials'], { relativeTo: this.route });
+    this.router.navigate(['menu/SP'], { relativeTo: this.route });
   }
 
 }

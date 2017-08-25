@@ -11,8 +11,8 @@
     class="row pd-menu-detail__list">
     <div
       *ngFor="let detail of menuDetailList"
-      class="col-md-6 col-lg-6 pd-menu-detail__list_item">
-        <div class="col-md-6 col-lg-6 text-right left">
+      class="col-lg-6 col-md-6 col-sm-12 col-xs-12 pd-menu-detail__list_item">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right left">
           <div class="pd-menu-detail__list_item_image-code">
             <img [src]="detail.imageUrl" [alt]="detail.name">
             <span class="code">{{ detail.shortName }}</span>
@@ -24,7 +24,7 @@
             <span class="portion">{{ detail.largePortionName }}</span>
           </div>
         </div>
-        <div class="col-md-6 col-lg-6 text-left right">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left right">
           <h3>{{ detail.name }}</h3>
           <p>{{ detail.description }}</p>
         </div>

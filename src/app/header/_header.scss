@@ -18,6 +18,18 @@ nav {
       position: relative;
       top: -30px;
       text-shadow: 2px 3px 2px $gray;
+      @media (max-width: $screen-desktop) {
+        top: 0;
+      }
+    }
+    @media (max-width: $screen-desktop-large) {
+      &__logo {
+        width: 115px;
+      }
+      &__text {
+        font-size: $font-xl;
+        font-weight: $font-weight-bold;
+      }
     }
   }
 
@@ -46,6 +58,15 @@ nav {
       }
     }
   }
+  @media (min-width: $screen-tablet)and (max-width: $screen-desktop) {
+    margin-top: 10px;
+    li {
+      a {
+        font-size: $font-l;
+        margin-left: 0;
+      }
+    }
+  }
 
   .fa {
     display: block;
@@ -58,6 +79,10 @@ nav {
     padding-right: 0;
     + span {
       display: block;
+    }
+    .fa {
+      display: inline-block;
+      margin-right: 7px;
     }
   }
 }
