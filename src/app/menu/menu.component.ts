@@ -1,5 +1,7 @@
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+
 import { Category } from './category/category.model';
-import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../shared/backend.service';
 
 @Component({
@@ -7,10 +9,11 @@ import { BackendService } from '../shared/backend.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./_menu.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnDestroy {
 
   categories: Array<Category>;
   loading: boolean;
+  subscription: Subscription;
 
   constructor(private backendService: BackendService) { }
 
@@ -20,6 +23,16 @@ export class MenuComponent implements OnInit {
       .then(categories => this.categories = categories);
 
     this.loading = false;
+    
+    this.subscription = this.backendService.loading
+      .subscribe(value => {
+        console.log('loading value: ', value);
+        this.loading = value;
+      });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

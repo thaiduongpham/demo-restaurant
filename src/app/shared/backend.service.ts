@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable, Subject } from 'rxjs/Rx';
 import 'rxjs/Rx';
 
 import { Category } from './../menu/category/category.model';
@@ -11,6 +11,7 @@ import { MenuDetail } from './../menu/menu-detail/menu-detail.model';
 export class BackendService {
 
   static BASE_URL = 'https://duong-restaurant-server.herokuapp.com/';
+  loading = new Subject<boolean>();
 
   constructor(private http: Http) { }
 

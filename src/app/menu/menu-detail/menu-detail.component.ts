@@ -16,7 +16,6 @@ export class MenuDetailComponent implements OnInit {
   name: string;
   description: string;
   menuDetailList: MenuDetail[];
-  // loading: boolean;
   cName: string;
   cDescription: string;
 
@@ -27,14 +26,12 @@ export class MenuDetailComponent implements OnInit {
 
   async ngOnInit() {
     const shortName = this.route.snapshot.params.id;
-    // this.loading = true;
     await this.backendService.getCategoryContent(shortName)
       .then(items => {
         this.menuDetailList = items.menu_items.map(item => MenuDetail.fromJSON(item));
         this.cName = items.category.name + ' Menu';
         this.cDescription = items.category.special_instructions;
       });
-    // this.loading = false;
   }
 
   onBack() {
