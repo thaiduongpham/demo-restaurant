@@ -10,12 +10,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuComponent } from './menu/menu.component';
+import { ContactComponent } from './awards/contact.component';
 import { AboutComponent } from './about/about.component';
-import { AwardsComponent } from './awards/awards.component';
 import { CategoryComponent } from './menu/category/category.component';
 import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BackendService } from './shared/backend.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,11 @@ import { BackendService } from './shared/backend.service';
     HomeComponent,
     MenuComponent,
     AboutComponent,
-    AwardsComponent,
+    ContactComponent,
     CategoryComponent,
     MenuDetailComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

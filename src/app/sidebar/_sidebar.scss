@@ -1,0 +1,45 @@
+@import '../assets/styles/core/main';
+
+.pd-sidebar {
+  position: fixed;
+  top: 250px;
+  right: -15px;
+  z-index: 2;
+  margin-bottom: 0;
+  padding-left: 0;
+  li {
+    list-style-type: none;
+    margin-bottom: 7px;
+  }
+  a {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: $font-l;
+    color: $white;
+    min-width: 55px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+
+    &:hover {
+      -webkit-transform: translateX(-10px);
+      transform: translateX(-8px);
+    }
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+    }
+    &.fa-facebook {
+      background-color:#3b5998;
+    }
+    &.fa-linkedin {
+      background-color:#0077B5;
+    }
+    &.fa-code-fork {
+      background-color:#333;
+    }
+  }
+}

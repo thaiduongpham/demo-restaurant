@@ -1,23 +1,28 @@
 <div class="pd-home">
   <div class="pd-home__top">
-    <img src="http://www.davidchuschinabistro.com/images/jumbotron_768.jpg" alt="top image" class="img-responsive">
+    <img src="../assets/images/home/jumbotron.jpg" alt="top image" class="img-responsive">
   </div>
   <div class="row text-center pd-home__list">
     <div class="col-lg-4 col-md-4 col-sm-6 pd-home__list_item left">
       <div class="pd-border-highlight" (click)="onOpenMenu()">
-        <img src="http://www.davidchuschinabistro.com/images/menu-tile.jpg" alt="Menu title">
+        <img src="../assets/images/home/menu-tile.jpg" alt="Menu tile">
         <span class="text">Menu</span>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6 pd-home__list_item middle">
       <div class="pd-border-highlight" (click)="onOpenSpecials()">
-        <img src="http://www.davidchuschinabistro.com/images/specials-tile.jpg" alt="Specials title">
+        <img src="../assets/images/home/specials-tile.jpg" alt="Specials title">
         <span class="text">Specials</span>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 pd-home__list_item right">
       <div class="pd-border-highlight">
-        <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+        <agm-map 
+          [latitude]="lat" 
+          [longitude]="lng" 
+          [zoom]="16"
+          [streetViewControl]="true">
+        </agm-map>
         <span class="text">Map</span>
       </div>
     </div>

@@ -2,9 +2,11 @@
   <span
     class="pd-back-btn"
     (click)="onBack()">back</span>
-
-  <h1>{{ cName }}</h1>
-  <p>{{ cDescription }}</p>
+  
+  <div class="pd-menu-detail__top">
+      <h1 class="pd-font-title">{{ cName }}</h1>
+      <p>{{ cDescription }}</p>
+  </div>
 
   <div
     *ngIf="menuDetailList"

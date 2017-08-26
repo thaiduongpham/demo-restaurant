@@ -2,8 +2,11 @@
 
 .pd-menu-detail {
   margin: 20px 0;
+  &__top {
+    padding: 0 15px;
+  }
   &__list {
-    margin: 40px 0;
+    margin: 40px 0 20px;
     &_item {
       padding: 0 7.5px;
       margin-bottom: 20px;
