@@ -19,7 +19,7 @@ import { MenuDetailComponent } from './menu/menu-detail/menu-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BackendService } from './shared/backend.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     CategoryComponent,
     MenuDetailComponent,
     NotFoundComponent,
-    SidebarComponent
+    SidebarComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

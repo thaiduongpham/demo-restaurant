@@ -3,9 +3,14 @@
 nav {
   background: $red;
   color: $white;
-  height: 170px;
   padding: 20px 0;
   margin: 0;
+  @media (min-width: $screen-tablet) {
+    height: 170px;
+  }    
+  @media (max-width: $screen-tablet) {
+    padding-bottom: 0;
+  }    
   
   .pd-header {
     &__logo {
@@ -33,6 +38,10 @@ nav {
     }
   }
 
+  .navbar-toggle {
+    margin: 0 15px 20px;
+  }
+
   a {
     color: $white;
     cursor: pointer;
@@ -54,7 +63,9 @@ nav {
       a {
         background-color: transparent;
         color: $yellow;
-        border: 1px solid;
+        @media (min-width: $screen-tablet) {
+          border: 1px solid;
+        }
       }
     }
   }
@@ -84,6 +95,11 @@ nav {
       display: inline-block;
       margin-right: 7px;
     }
+    @media (min-width: $screen-tablet) {
+      + span {
+        text-align: right;
+      }
+    }      
   }
 }
 
