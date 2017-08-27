@@ -1,8 +1,94 @@
 @import '../assets/styles/core/main';
 
-.pd-awards {
+.pd-contact {
   margin: 20px 0 40px;
   h1 {
     margin-bottom: 15px;
   }
+
+  &__form {
+    margin: 30px 0 20px;
+    text-align: center;
+
+    form {
+      width: 70%;
+      min-width: 300px;
+      margin: 0 auto;
+    }
+
+    .form-control {
+      display: inline-block;
+      padding: 6px 15px;
+      margin-bottom: 10px;
+      font-size: $font-m;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    label {
+      margin-bottom: 0;
+      display: block;
+      text-align: left;
+      padding: 0 15px;
+      position: absolute;
+      top: 14px;
+      color: gray;
+      transition: all .1s linear;
+    }
+
+    input, textarea {
+      &:focus, &.ng-touched.text {
+        padding-bottom: 0;
+        + label {
+          top: 5px;
+          font-size: 10px;
+        }
+      }
+
+      &:required {
+        &.ng-touched.ng-valid {
+          padding-bottom: 0;
+          + label {
+            top: 5px;
+            font-size: 10px;
+          }
+        }
+        + label {
+          &:after {
+            content: '*';
+            font-size: 12px;
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+
+    input {
+      min-height: 55px;      
+    }
+
+    textarea {
+      min-height: 150px;
+      &:focus, &:valid {
+        padding-top: 20px;
+      }
+    }
+
+  }
+
+  input, textarea {
+    &.ng-invalid.ng-touched {
+      border: 1px solid $red;
+    }
+  }
+
+  .help-block {
+    color: $red;
+    font-size: $font-s;
+    margin: -5px 0 18px;
+    text-align: left;
+  }
+
 }

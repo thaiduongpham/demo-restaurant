@@ -1,5 +1,6 @@
 import { AgmCoreModule } from '@agm/core';
 
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -34,6 +35,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpModule,
     AgmCoreModule.forRoot({
