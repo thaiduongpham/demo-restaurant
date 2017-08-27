@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import 'rxjs/Rx';
 
+import { Contact } from '../contact/contact.model';
 import { Category } from './../menu/category/category.model';
 import { MenuDetail } from './../menu/menu-detail/menu-detail.model';
 
@@ -11,6 +12,9 @@ import { MenuDetail } from './../menu/menu-detail/menu-detail.model';
 export class BackendService {
 
   static BASE_URL = 'https://duong-restaurant-server.herokuapp.com/';
+  
+  // Use Firebase to store Contact Info
+  static FIREBASE_URL = 'https://fir-restaurant-a9dc8.firebaseio.com/';
   loading = new Subject<boolean>();
 
   constructor(private http: Http) { }
@@ -40,6 +44,10 @@ export class BackendService {
         console.log('error: ', error);
         return Observable.throw('Ooopp... Something went wrong');
       });
+  }
+
+  storeContactInfo (contact: Contact) {
+    return this.http.post(`${BackendService.FIREBASE_URL}/contact.json`, contact);
   }
 
 }
