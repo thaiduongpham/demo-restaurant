@@ -12,6 +12,9 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class ContactComponent implements OnInit {
   defaultGender = 'male';
+  emailValue;
+  phoneValue;
+  // Toast Option
   public options = {
     position: ['top', 'right'],
     lastOnBottom: true
